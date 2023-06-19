@@ -1,0 +1,29 @@
+#!/bin/bash
+
+SEEDS_PATH=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
+
+DATABASE="intro_to_sql_for_analytics"
+
+echo "This script creates a local Postgres database called "$DATABASE" and imports the 'Intro to SQL for Analytics' datasets into it."
+
+if ! psql -lqt | cut -d \| -f 1 | grep -qw $DATABASE; then
+  echo "Creating database ..."
+  createdb $DATABASE
+else
+  echo "Database already exists, skipping creation."
+fi
+
+echo "Importing into $DATABASE from $SEEDS_PATH..."
+
+for file in "$SEEDS_PATH"/*.sql; do
+  if [ -e "$file" ] ; then
+    echo "Running $file ..."
+    psql -h 127.0.0.1 $DATABASE < $file 
+  fi
+done
+
+echo
+echo "Done. The following tables have been created in a database called '$DATABASE':"
+
+psql $DATABASE -c "\dt"
+
