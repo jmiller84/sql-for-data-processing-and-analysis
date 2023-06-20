@@ -71,7 +71,7 @@ SELECT *
 
 ## Exercises
 
-1. Write a query that returns only the songs by `Gogi Grant`, ordered by `year_rank` so that you can quickly see her most popular songs.
+1. Write a query that returns only the songs by `Aaliyah`, ordered by `year_rank` so that you can quickly see her most popular songs.
 2. Write a query that returns only songs where the `year_rank` is `1` and order them by `artist` so that you can easily find out whether a given artist had a top ranked song.
 
 > It would be super useful if you could now do something to aggregate the data, don't you think? For example, it would be interesting to know which artist has the greatest number of top ranked songs. Well... you'll learn how to do just that in a few bite's time.
@@ -84,7 +84,7 @@ SELECT *
   <h3>Exercise 1</h3>
   <code>
     SELECT * FROM billboard_top_100_year_end
-      WHERE artist = 'Gogi Grant'
+      WHERE artist = 'Aaliyah'
       ORDER BY year_rank;
   </code>
   <p>
