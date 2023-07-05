@@ -159,7 +159,7 @@ As well as access to the Stack Overflow database, we have prepared the following
 
 ## Submitting your work
 
-Please record you and your pair presenting this project and running the cells, then submit your recording using [this form](https://airtable.com/shrNFgNkPWr3d63Db?prefill_Item=sql_data_03).
+Please record you and your pair presenting this project and running the cells, then submit your recording using [this form](https://airtable.com/shrvo9ePjlwnaiLv5?prefill_Item=sql_data_03).
 
 <!-- BEGIN GENERATED SECTION DO NOT EDIT -->
 

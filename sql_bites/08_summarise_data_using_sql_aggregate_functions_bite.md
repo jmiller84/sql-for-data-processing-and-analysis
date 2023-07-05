@@ -239,7 +239,7 @@ Ludacris | 28
 
 ## Challenge
 
-> This is a process feedback challenge. Please record you and your pair presenting this challenge and running the cells, then submit your recording using [this form](https://airtable.com/shrNFgNkPWr3d63Db?prefill_Item=sql_data_01)
+> This is a process feedback challenge. Please record you and your pair presenting this challenge and running the cells, then submit your recording using [this form](https://airtable.com/shrvo9ePjlwnaiLv5?prefill_Item=sql_data_01)
 
 Write a query which returns the difference between the "High Price" and the "Low
 Price" of pumpkins in different cities. Ensure that the results are returned in

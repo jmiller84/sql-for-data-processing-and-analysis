@@ -86,7 +86,7 @@ ON medals_sub.country = athletes_sub.countrycode;
 
 ## Challenge
 
-> This is a process feedback challenge. Please record you and your pair presenting this challenge and running the cells, then submit your recording using [this form](https://airtable.com/shrNFgNkPWr3d63Db?prefill_Item=sql_data_02).
+> This is a process feedback challenge. Please record you and your pair presenting this challenge and running the cells, then submit your recording using [this form](https://airtable.com/shrvo9ePjlwnaiLv5?prefill_Item=sql_data_02).
 
 Paula wanted to write a query that generates a table showing the average age of competitors winning each medal - gold, silver or bronze. Her query is below - does it work as intended? HINT: The answer is no :)
 
