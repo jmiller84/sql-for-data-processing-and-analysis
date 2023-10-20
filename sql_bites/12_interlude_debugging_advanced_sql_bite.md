@@ -12,18 +12,24 @@ Learn to debug advanced SQL queries
 
 ## Introduction
 
-`JOIN`s and sub-queries bring with them a whole new range of potential bugs. So let's do some more debugging, this time looking at some more advanced SQL.
+`JOIN`s and sub-queries bring with them a whole new range of potential bugs. So
+let's do some more debugging, this time looking at some more advanced SQL.
 
 [The process](09_interlude_debugging_sql_bite.md#a-process-for-debugging-sql) remains the same, but when you come to [_simplify_](./09_interlude_debugging_sql_bite.md#4-simplify), you have one new tool at your disposal - checking subqueries in isolation!
 
 ### Simplify by Isolating Subqueries
 
-Most subqueries should work in isolation. I.e. You should be able to copy-paste them into an independent query and expect them to work. This is a great way of picking apart an SQL query that includes a subquery.
+Most subqueries should work in isolation. I.e. You should be able to copy-paste
+them into an independent query and expect them to work. This is a great way of
+picking apart an SQL query that includes a subquery.
 
-The goal is, if you find a bug in the subquery, to debug the subquery in isolation then incorporate the working subquery back into the outer-query.
+The goal is, if you find a bug in the subquery, to debug the subquery in
+isolation then incorporate the working subquery back into the outer-query.
 
 ## Exercise
-Temu wanted to write a query that generates a table showing the number of athletes and gold medals for each country. Their code is below - it doesn't work as intended.
+Temu wanted to write a query that generates a table showing the number of
+athletes and gold medals for each country. Their code is below - it doesn't work
+as intended.
 
 Your job is to:
 - Understand the problem
@@ -88,7 +94,9 @@ ON medals_sub.country = athletes_sub.countrycode;
 
 > This is a process feedback challenge. Please record you and your pair presenting this challenge and running the cells, then submit your recording using [this form](https://airtable.com/shrvo9ePjlwnaiLv5?prefill_Item=sql_data_02).
 
-Paula wanted to write a query that generates a table showing the average age of competitors winning each medal - gold, silver or bronze. Her query is below - does it work as intended? HINT: The answer is no :)
+Paula wanted to write a query that generates a table showing the average age of
+competitors winning each medal - gold, silver or bronze. Her query is below -
+does it work as intended? HINT: The answer is no :)
 
 Your job is to:
 - Understand the problem

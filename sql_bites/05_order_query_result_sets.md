@@ -13,13 +13,16 @@ Learn to order query results sets using `ORDER BY`.
 So far, we've not been able to influence the order in which rows are returned -
 they are just returned in the order in which they appear in the database table.
 
-The `ORDER BY` clause allows you to reorder your results based on the data in one or more columns. 
+The `ORDER BY` clause allows you to reorder your results based on the data in
+one or more columns. 
 
 We'll continue using the `billboard_top_100_year_end` to learn about this.
 
 ## Ordering rows based on a column
 
-If you wanted to sort (or `ORDER`) the query results by the artist column, you could add `ORDER BY artist` to you original `SELECT * FROM billboard_top_100_year_end` query.
+If you wanted to sort (or `ORDER`) the query results by the artist column, you
+could add `ORDER BY artist` to you original `SELECT * FROM
+billboard_top_100_year_end` query.
 
 ```sql
 SELECT *
@@ -31,7 +34,8 @@ Give it a try now.
 
 ## Ordering data based on multiple columns
 
-What if you wanted to `ORDER` by `artist` and then by `year_rank`? You can actually use a comma separated list of columns by which you want to `ORDER`.
+What if you wanted to `ORDER` by `artist` and then by `year_rank`? You can
+actually use a comma separated list of columns by which you want to `ORDER`.
 
 ```sql
 SELECT *
@@ -43,7 +47,9 @@ Give it a try now.
 
 ## Reversing the order
 
-By default, `ORDER BY` will return data in ascending order. For text, like artist names, that means "A" to "Z". If you would like to reverse the order, you can use the `DESC` modifier for any given column.
+By default, `ORDER BY` will return data in ascending order. For text, like
+artist names, that means "A" to "Z". If you would like to reverse the order, you
+can use the `DESC` modifier for any given column.
 
 To reverse the order for `artist`...
 
@@ -71,8 +77,11 @@ SELECT *
 
 ## Exercises
 
-1. Write a query that returns only the songs by `Gogi Grant`, ordered by `year_rank` so that you can quickly see her most popular songs.
-2. Write a query that returns only songs where the `year_rank` is `1` and order them by `artist` so that you can easily find out whether a given artist had a top ranked song.
+1. Write a query that returns only the songs by `Gogi Grant`, ordered by
+   `year_rank` so that you can quickly see her most popular songs.
+2. Write a query that returns only songs where the `year_rank` is `1` and order
+   them by `artist` so that you can easily find out whether a given artist had a
+   top ranked song.
 
 > It would be super useful if you could now do something to aggregate the data, don't you think? For example, it would be interesting to know which artist has the greatest number of top ranked songs. Well... you'll learn how to do just that in a few bite's time.
 

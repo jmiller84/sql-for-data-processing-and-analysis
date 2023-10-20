@@ -4,14 +4,16 @@ Learn to limit query results sets using `LIMIT`.
 
 ## Introduction
 
-You've seen that the `SELECT` SQL query is used to retrieve records from a table and you saw that the general syntax for that looks like this:
+You've seen that the `SELECT` SQL query is used to retrieve records from a table
+and you saw that the general syntax for that looks like this:
 
 ```sql
 SELECT [columns to select or *] FROM [table name] 
 ```
 
-`LIMIT` is a further way to filter the result set: it restricts how many rows the SQL query returns.
-To use `LIMIT`, we add it on to the end of the statement like this:
+`LIMIT` is a further way to filter the result set: it restricts how many rows
+the SQL query returns. To use `LIMIT`, we add it on to the end of the statement
+like this:
 
 ```sql
 SELECT [columns to select or *] FROM [table name] LIMIT [number];
@@ -27,13 +29,21 @@ The `LIMIT` keyword always goes at the very end of a SQL statement.
 
 ## Why should you limit your results?
 
-Limits are a simple way to keep queries from taking too long to return. 
-The aim of many of your queries will simply be to see what a particular table looks like - you'll want to get visibility into the first few rows of data to get an idea of which fields you care about and how you want to manipulate them. 
-If you query a very large table (such as one with hundreds of thousands or millions of rows) and don't use a limit, you could end up waiting a long time for all of your results to be displayed, which doesn't make sense if you only care about the first few.
+Limits are a simple way to keep queries from taking too long to return.
+
+The aim of many of your queries will simply be to see what a particular table
+looks like:
+- you'll want to get visibility into the first few rows of data to get an idea
+of which fields you care about and how you want to manipulate them. If you query
+a very large table (such as one with hundreds of thousands or millions of rows)
+and don't use a limit, you could end up waiting a long time for all of your
+results to be displayed, which doesn't make sense if you only care about the
+first few.
 
 ## Example
 
-To retrieve only the first 5 records of the `billboard_top_100_year_end` table, we write:
+To retrieve only the first 5 records of the `billboard_top_100_year_end` table,
+we write:
 
 ```sql
 SELECT * 
@@ -53,7 +63,8 @@ Run this command and you should get the following result set:
      4 | 1956 |         5 | Gogi Grant    | Gogi Grant    | The Wayward Wind |  5
 ```
 
-To restrict the result set further to only show rows where the year is 2005, we can combine this with a `WHERE` clause:
+To restrict the result set further to only show rows where the year is 2005, we
+can combine this with a `WHERE` clause:
 
 ```sql
 SELECT * 
@@ -76,8 +87,8 @@ index  | year | year_rank |        group_name         |     artist     |     son
 
 ## Exercise One
 
-Write a query against the `billboard_top_100_year_end` that uses `LIMIT` to restrict the result set to only 15 rows.
-The query should return all columns.
+Write a query against the `billboard_top_100_year_end` that uses `LIMIT` to
+restrict the result set to only 15 rows. The query should return all columns.
 
 <details>
   <summary>Solution</summary>
@@ -89,7 +100,8 @@ The query should return all columns.
 
 ## Exercise Two
 
-Write a query against the `billboard_top_100_year_end` that uses `LIMIT` to restrict the result set to only 10 rows of songs where `artist` is Mariah Carey.
+Write a query against the `billboard_top_100_year_end` that uses `LIMIT` to
+restrict the result set to only 10 rows of songs where `artist` is Mariah Carey.
 The query should return all columns.
 
 <details>
@@ -102,8 +114,9 @@ The query should return all columns.
 
 ## Challenge
 
-Write a query against the `billboard_top_100_year_end` that uses `LIMIT` to restrict the result set to only 10 rows of songs whose `year_rank` was 1.
-The query should return only the `year` and `song_name` columns.
+Write a query against the `billboard_top_100_year_end` that uses `LIMIT` to
+restrict the result set to only 10 rows of songs whose `year_rank` was 1. The
+query should return only the `year` and `song_name` columns.
 
 You should get the following result set:
 

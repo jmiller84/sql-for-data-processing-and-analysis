@@ -6,28 +6,36 @@ example solution video, and a challenge without a solution video for you to test
 your learning. [Read more about how to use Makers
 Bites.](https://github.com/makersacademy/course/blob/main/labels/bites.md)_
 
-Learn to use the results of one SQL queries as inputs to another query using subqueries and Common Table Expressions (CTEs).
+Learn to use the results of one SQL queries as inputs to another query using
+subqueries and Common Table Expressions (CTEs).
 
 ## Introduction
 
-Subqueries (also known as inner queries) allow you to break down your query into multiple steps. You might do this...
+Subqueries (also known as inner queries) allow you to break down your query into
+multiple steps. You might do this...
 
 - For performance
 - Out of necessity
 
-A comparable mathematical example, would be the use of brackets in an equation to denote that some calculations are performed before others. For example...
+A comparable mathematical example, would be the use of brackets in an equation
+to denote that some calculations are performed before others. For example...
 
 ```
 4(x + 1) = 20
 ```
 
-OK back to SQL... Imagine you wanted to calculate the average age of the athletes for each sport in the Tokyo Paralympics. First, you'd have to calculate the age of each competitor, then you'd perform an aggregation to calculate the average. A `FROM` subquery would be useful here!
+OK back to SQL... Imagine you wanted to calculate the average age of the
+athletes for each sport in the Tokyo Paralympics. First, you'd have to calculate
+the age of each competitor, then you'd perform an aggregation to calculate the
+average. A `FROM` subquery would be useful here!
 
 ### `FROM` Subqueries
 
-To calculate the average age of athletes for each sport, we can build a query that includes a `FROM` subquery. This effectively generates a new table first.
+To calculate the average age of athletes for each sport, we can build a query
+that includes a `FROM` subquery. This effectively generates a new table first.
 
-The subquery will need to calculate the age of each athlete. We can do that like this.
+The subquery will need to calculate the age of each athlete. We can do that like
+this.
 
 ```sql
 %%sql SELECT 
@@ -45,7 +53,8 @@ The subquery will need to calculate the age of each athlete. We can do that like
 |ABASSI Mostefa|	Wheelchair Basketball|	46.0|
 ....
 
-The only new thing here is `DATE_PART` which is used to return _part_ of a date. Here, we use it to get the _year_.
+The only new thing here is `DATE_PART` which is used to return _part_ of a date.
+Here, we use it to get the _year_.
 
 Now, let's plan what the _outer_ query will look like.
 
@@ -56,7 +65,8 @@ SELECT subquery_result.sport, AVG(subquery_result.age) AS average_age
   ORDER BY average_age;
 ```
 
-Our subquery will now replace the `(...)` on line 2 and the result of the subquery will be aliased as `subquery_result`.
+Our subquery will now replace the `(...)` on line 2 and the result of the
+subquery will be aliased as `subquery_result`.
 
 ```sql
 SELECT subquery_result.sport, AVG(subquery_result.age) AS average_age
@@ -71,7 +81,8 @@ SELECT subquery_result.sport, AVG(subquery_result.age) AS average_age
   ORDER BY average_age DESC;
 ```
 
-What if we wanted to find the average age for each medal? We'd have to throw a `JOIN` in as well!
+What if we wanted to find the average age for each medal? We'd have to throw a
+`JOIN` in as well!
 
 Let's do the subquery first.
 
@@ -117,7 +128,8 @@ ORDER BY average_age DESC;
 
 ### `WHERE` Subqueries
 
-If you wanted to get a list of all the athletes who had won a gold medal, you could use a `WHERE` subquery, like this
+If you wanted to get a list of all the athletes who had won a gold medal, you
+could use a `WHERE` subquery, like this
 
 ```sql
 SELECT name
@@ -129,9 +141,11 @@ WHERE name IN (
 );
 ```
 
-Note that you don't need to alias the subquery when it's used as part of a `WHERE` statement.
+Note that you don't need to alias the subquery when it's used as part of a
+`WHERE` statement.
 
-What if you wanted a list of all athletes who had participated in multiple sports?
+What if you wanted a list of all athletes who had participated in multiple
+sports?
 
 ```sql
 SELECT name
@@ -146,9 +160,12 @@ WHERE name IN (
 
 ## `JOIN` Subqueries
 
-You can also use a subquery as part of your JOIN statement if, for example, you want to manipulate data in the right hand (second) table before joining.
+You can also use a subquery as part of your JOIN statement if, for example, you
+want to manipulate data in the right hand (second) table before joining.
 
-Here's a query that will return all the athletes who won a gold medal. It filters the medals table to get only the gold medals and then joins it to the athletes table.
+Here's a query that will return all the athletes who won a gold medal. It
+filters the medals table to get only the gold medals and then joins it to the
+athletes table.
 
 ```sql
 SELECT date_of_birth, athletes.name, athletes.sport, gold_medals.medal
@@ -171,15 +188,21 @@ JOIN (
 ## Summary
 
 - Subqueries can be used in `FROM`, `WHERE` and `JOIN` statements
-- `FROM` subqueries allow you to perform some initial manipulations to before filtering and / or aggregating. For example, if you wanted to derive the age of each athlete then filter for people aged 28, you'd need to use a `FROM` subquery.
+- `FROM` subqueries allow you to perform some initial manipulations to before
+  filtering and / or aggregating. For example, if you wanted to derive the age
+  of each athlete then filter for people aged 28, you'd need to use a `FROM`
+  subquery.
 - `WHRE` subqueries allow you to build dynamic conditions into your queries.
-- `JOIN` subqueries allow you to perform initial manipulations to the right table, before joining.
+- `JOIN` subqueries allow you to perform initial manipulations to the right
+  table, before joining.
 
 > Is is the case with programming in general, there are going to be multiple ways of writing each query above. For now, the most important thing is that you are starting to understand what is possible. Don't get too caught up on which approach would be 'best'.
 
 ## Exercise
 
-This final exercise of the SQL Bites will require you combine a few things that you have learned so far. Also, you'll probably need to make a plan! If you get stuck, revisit the plan.
+This final exercise of the SQL Bites will require you combine a few things that
+you have learned so far. Also, you'll probably need to make a plan! If you get
+stuck, revisit the plan.
 
 Write a query that generates a table like this...
 

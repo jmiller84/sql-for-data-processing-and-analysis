@@ -4,8 +4,9 @@ Learn to query a database using `SELECT` and `FROM`.
 
 # Introduction
 
-You've encountered SQL before in the context of building database-backed applications.
-The building blocks of the SQL language remain the same whether we apply them to software engineering or analytics.
+You've encountered SQL before in the context of building database-backed
+applications. The building blocks of the SQL language remain the same whether we
+apply them to software engineering or analytics.
 
 > For the exercises below, use your `sql_bites` notebook
 
@@ -17,8 +18,9 @@ Then check your understanding by completing the challenge below.
 
 ## Challenge One
 
-For this challenge, you'll use the [Billboard Top 100 dataset](seeds/README.md#billboard-top-100).
-You can find it in the `billboard_top_100_year_end` table in your database.
+For this challenge, you'll use the [Billboard Top 100
+dataset](seeds/README.md#billboard-top-100). You can find it in the
+`billboard_top_100_year_end` table in your database.
 
 Find the name of the song that came second in the charts in the year 1988.
 
@@ -36,16 +38,16 @@ If this challenge felt difficult, go back and do [the exercises from the Databas
 
 ## Selecting all columns
 
-Here's a small addition to what you've seen so far.
-You've seen that we can use `SELECT` to pick out specific columns to return in the result set like this:
+Here's a small addition to what you've seen so far. You've seen that we can use
+`SELECT` to pick out specific columns to return in the result set like this:
 
 ```
 SELECT song_name FROM billboard_top_100_year_end
 ```
 
-But when analysing data, it's often useful to inspect all columns of a dataset first to get an idea of what kind of data it contains.
-We can use this using the special character `*`.
-It signifies we want all the columns in the table.
+But when analysing data, it's often useful to inspect all columns of a dataset
+first to get an idea of what kind of data it contains. We can use this using the
+special character `*`. It signifies we want all the columns in the table.
 
 ```
 SELECT * FROM billboard_top_100_year_end
@@ -71,9 +73,9 @@ index | name | country   |  countrycode  | sport |  sport_code  |  event
 
 <details>
   <summary>Solution</summary>
-  ```
+  <code>
   SELECT * FROM coaches
-  ```
+  <code>
 </details>
 
 ___

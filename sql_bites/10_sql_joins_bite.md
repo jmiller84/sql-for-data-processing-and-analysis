@@ -29,13 +29,21 @@ main types.
 - `INNER JOIN`s
 - `OUTER JOIN`s
 
-Both types of `JOIN` query involve matching records based on one or more specific fields. So, for example, we could match records in `athletes` with records in `medals` using `name` which is present in both tables and (hopefully) no two `athletes` have the exact same name.
+Both types of `JOIN` query involve matching records based on one or more
+specific fields. So, for example, we could match records in `athletes` with
+records in `medals` using `name` which is present in both tables and (hopefully)
+no two `athletes` have the exact same name.
 
-When you attempt a `JOIN`, you might find that all records from both tables match or, more likely, you'll find that some records from one or both tables do not match.
+When you attempt a `JOIN`, you might find that all records from both tables
+match or, more likely, you'll find that some records from one or both tables do
+not match.
 
-In the case of our Paralympics data, we're likely to find that not all athletes won a medal, so if we try to `JOIN` `athletes` with `medals` matching `ON` `name`, some of the `athletes` will remain unmatched.
+In the case of our Paralympics data, we're likely to find that not all athletes
+won a medal, so if we try to `JOIN` `athletes` with `medals` matching `ON`
+`name`, some of the `athletes` will remain unmatched.
 
-The difference between `INNNER JOINS` and `OUTER JOINS` lies in what happens to the unmatched records.
+The difference between `INNNER JOINS` and `OUTER JOINS` lies in what happens to
+the unmatched records.
 
 ## `INNER JOIN`
 
@@ -221,9 +229,14 @@ won matched against records from the `athletes` table.
 
 ## `SELF JOIN`
 
-There's a third type of `JOIN` which actually overlaps both `INNER` and `OUTER JOINS` - `SELF JOIN`. This is where you match records against other records of the same table. That probably sounds like an odd thing to do so let's use this example - unfortunately the Paralympics data set doesn't work well here so we'll need another example.
+There's a third type of `JOIN` which actually overlaps both `INNER` and `OUTER
+JOINS` - `SELF JOIN`. This is where you match records against other records of
+the same table. That probably sounds like an odd thing to do so let's use this
+example - unfortunately the Paralympics data set doesn't work well here so we'll
+need another example.
 
-Imagine you have a table called `staff` and that each record corresponds to either a regular member of staff or a manager.
+Imagine you have a table called `staff` and that each record corresponds to
+either a regular member of staff or a manager.
 
 <table>
 <caption>Staff</captio>
@@ -263,9 +276,12 @@ Imagine you have a table called `staff` and that each record corresponds to eith
 </tbody>
 </table>
 
-Regular members of staff have a `manager_id` to show which other member of staff is there manager. For example He, Zihao manages both HOET, Griet and AAJIM Munkhbat.
+Regular members of staff have a `manager_id` to show which other member of staff
+is there manager. For example He, Zihao manages both HOET, Griet and AAJIM
+Munkhbat.
 
-So that you can see management relationships more easily, you want to create a table that looks like this.
+So that you can see management relationships more easily, you want to create a
+table that looks like this.
 
 <table>
 <thead>
@@ -294,7 +310,12 @@ So that you can see management relationships more easily, you want to create a t
 </tbody>
 </table>
 
-Since this requires you to bring data together from different rows in the same table, `SELF JOIN` is the answer. Specifically, we need an `INNER SELF JOIN` because we're not aiming to have any unmatched records in our output. Note that in `SELF JOIN`s we need to create two different aliases for the table so that it can be referred to twice (this is what's happening on the second line below where you see `staff alias_a` and `staff alias_b`).
+Since this requires you to bring data together from different rows in the same
+table, `SELF JOIN` is the answer. Specifically, we need an `INNER SELF JOIN`
+because we're not aiming to have any unmatched records in our output. Note that
+in `SELF JOIN`s we need to create two different aliases for the table so that it
+can be referred to twice (this is what's happening on the second line below
+where you see `staff alias_a` and `staff alias_b`).
 
 ```sql
 SELECT alias_a.name staff, alias_b.name manager
@@ -429,6 +450,22 @@ Answer the original questions that were posed at the start of this bite
     </table>
   </details>
 <br>
+
+
+## JOINS Recap
+
+It can be easy to get confused with JOINS. For reference when attempting more difficult challenges in this module and future modules. You can come back to this point and recap the differences between the JOINS:
+
+- Inner Joins will join together two tables, and ONLY include matches. For example if your first table (often called the `LEFT` table) has a column called artist_id, and your second table (often called the `RIGHT` table) also has a column called artist_id, an `INNER JOIN` will make a new table that includes all the rows from the `LEFT` and `RIGHT` tables where there are matches in both. If there was a row in the `LEFT` table with the value of, say, 3 in the `artist_id` column, but no 3 in the `artist_id` column in the `RIGHT` table, then that row would be left out.
+
+- Full Outer Joins will join both you `LEFT` and your `RIGHT` tables together regardless of whether there are matches; it will display a new table with `null` in the value field for the row that doesn't have a corresponding match. 
+
+- Left Outer Joins will look for matches on the table you specify first, i.e. table one, or the `LEFT` table.
+
+- Right Outer Joins will look for matches on the table you specify second (the table you choose to JOIN on), i.e. table two, or the `RIGHT` table.
+
+- Self Joins are where you make a new table from matching rows within the same starting table! We do this by making an alias "fake" `LEFT` table and an alias "fake" `RIGHT` table from the same starting table. 
+
 
 ## Challenge
 

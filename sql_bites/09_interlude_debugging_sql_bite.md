@@ -25,14 +25,21 @@ always applies - **don't try to fix the problem until you understand it**.
 
 #### 1. Understand the expected outcome
 
-In some rare cases, the expected outcome will be really simple. Perhaps, for example, you have two tables of 10 rows each and you know exactly what the output of a JOIN query should be. Normally though, you'll be working with much larger datasets. You could experiment with a truncated version of your real data set (more on that in step 3 - simplify) but you can also get a rough idea of the expected outcome with a large data set.
+In some rare cases, the expected outcome will be really simple. Perhaps, for
+example, you have two tables of 10 rows each and you know exactly what the
+output of a JOIN query should be. Normally though, you'll be working with much
+larger datasets. You could experiment with a truncated version of your real data
+set (more on that in step 3 - simplify) but you can also get a rough idea of the
+expected outcome with a large data set.
 
 - What columns should be present?
 - How many rows should there be?
 
 #### 2. Check query structure and logic
 
-As you've seen, you don't need to use every one of the possible SQL statements in any given query, but if they are used, they must appear in a specific order. Deviation from this order will result in an error.
+As you've seen, you don't need to use every one of the possible SQL statements
+in any given query, but if they are used, they must appear in a specific order.
+Deviation from this order will result in an error.
 
 - SELECT
 - FROM
@@ -45,26 +52,42 @@ As you've seen, you don't need to use every one of the possible SQL statements i
 
 > If you want to commit this to memory, create an amusing [mnemonic](https://en.wikipedia.org/wiki/Mnemonic) :)
 
-Logic can appear in several different parts of an SQL query and mistakes there will generate the wrong outcome. Carefully check the logic by working through it slowly.
+Logic can appear in several different parts of an SQL query and mistakes there
+will generate the wrong outcome. Carefully check the logic by working through it
+slowly.
 
 #### 3. Check data are as expected
 
-Compare the query to the tables. Does the query try to reference columns that don't exist? Does it try to use column values that are not present? Are there missing data or unexpected values in the tables you're using?
+Compare the query to the tables. Does the query try to reference columns that
+don't exist? Does it try to use column values that are not present? Are there
+missing data or unexpected values in the tables you're using?
 
 #### 4. Simplify
 
-The first three steps will solve some of your problems but they do rely on being able to parse and understand a potentially complex SQL query. Even then, your initial investigations might not yield much.
+The first three steps will solve some of your problems but they do rely on being
+able to parse and understand a potentially complex SQL query. Even then, your
+initial investigations might not yield much.
 
-In this step, you'll try to understand the problem by simplifying it. There are two ways in which you can do this.
+In this step, you'll try to understand the problem by simplifying it. There are
+two ways in which you can do this.
 
 - Simplify the data
 - Simplify the query
 
-To gain a better understanding of the expected outcome, simplify the data by using truncated versions of each table. When building these materials, I did this exact thing myself a few times, when I had surprising results from a JOIN query. This allowed me to generate a really clear idea of exactly what the outcome should be and compare it, row by row, to the actual outcome. When you simplify your data, you'll need to do it with some care. For example, if you're trying to debug a JOIN query, you'll need to makes sure there are still going to be some matching records!
+To gain a better understanding of the expected outcome, simplify the data by
+using truncated versions of each table. When building these materials, I did
+this exact thing myself a few times, when I had surprising results from a JOIN
+query. This allowed me to generate a really clear idea of exactly what the
+outcome should be and compare it, row by row, to the actual outcome. When you
+simplify your data, you'll need to do it with some care. For example, if you're
+trying to debug a JOIN query, you'll need to makes sure there are still going to
+be some matching records!
 
 > IMPORTANT: On the job, always check before hand if it is permitted for you to make copies of data.
 
-To gain a better understanding of the code, simplify the query. Your goal here is to remove stuff until the query executes without any bugs. I.e. There are no errors and it returns what you want it to return.
+To gain a better understanding of the code, simplify the query. Your goal here
+is to remove stuff until the query executes without any bugs. I.e. There are no
+errors and it returns what you want it to return.
 
 Some ways in which this can be achieved include...
 
@@ -74,11 +97,16 @@ Some ways in which this can be achieved include...
 
 #### 5. Build back up incrementally
 
-Once you've _simplified_ things, and the simplified version is bug-free (step 4), build back up towards the query you actually want to run. At some point, you might find that a bug is introduced. Then you'll know exactly where it lies and, _probably_, how to fix it.
+Once you've _simplified_ things, and the simplified version is bug-free (step
+4), build back up towards the query you actually want to run. At some point, you
+might find that a bug is introduced. Then you'll know exactly where it lies and,
+_probably_, how to fix it.
 
 ## Exercise
 
-Margarida wanted to write a query that returned an ordered list of all athletes who had won more than 1 medal. Her query is below but it doesn't work as intended.
+Margarida wanted to write a query that returned an ordered list of all athletes
+who had won more than 1 medal. Her query is below but it doesn't work as
+intended.
 
 Your job is to:
 - Understand the problem
@@ -119,7 +147,9 @@ SELECT COUNT(*), name
 
 ## Challenge
 
-Marco wanted to write a query that returns list of countries ordered by the number of medals they won, with the country winning the most medals at the top. Their query is below... it doesn't work as intended.
+Marco wanted to write a query that returns list of countries ordered by the
+number of medals they won, with the country winning the most medals at the top.
+Their query is below... it doesn't work as intended.
 
 Your job is to:
 - Understand the problem

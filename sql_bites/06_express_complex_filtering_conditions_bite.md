@@ -8,29 +8,30 @@ Bites.](https://github.com/makersacademy/course/blob/main/labels/bites.md)_
 
 ## Introduction
 
-So far, we've looked at different ways in which you can retrieve a raw view of 
-the data within your SQL database. You've seen how you can restrict the number 
-of records returned, and how to choose the order in which the results are 
-displayed. In both cases, you've been looking at different ways to return _all 
+So far, we've looked at different ways in which you can retrieve a raw view of
+the data within your SQL database. You've seen how you can restrict the number
+of records returned, and how to choose the order in which the results are
+displayed. In both cases, you've been looking at different ways to return _all
 of the data_.
 
-When working with data, you will frequently want to retrieve information based 
+When working with data, you will frequently want to retrieve information based
 on a specific question or condition:
 
 * How many new customers have been created this year?
 * How many customer purchases were over £1,000?
 * How many customers did not provide their email address upon registration?
 
-You could technically answer some of these questions already - for instance, 
-you could reorder your purchases table by `order_value` and then manually count 
-how many of them are over £1,000. But as the size and complexity of your data 
-increases, this quickly becomes impractical, especially if you want to answer 
-a question with multiple components:
+You could technically answer some of these questions already - for instance, you
+could reorder your purchases table by `order_value` and then manually count how
+many of them are over £1,000. But as the size and complexity of your data
+increases, this quickly becomes impractical, especially if you want to answer a
+question with multiple components:
 
-* How many customers who live in London, and are aged over 18, have made a 
+* How many customers who live in London, and are aged over 18, have made a
 purchase over £100?
 
-This is where **comparison operators** and **logical operators**, in combination with the `WHERE` clause, will help you.
+This is where **comparison operators** and **logical operators**, in combination
+with the `WHERE` clause, will help you.
 
 ## The `WHERE` Clause
 We saw the `WHERE` clause back in [bite 03](./03_revisit_the_basics_of_sql.md) but, as a reminder, it's used to select a subset of records that match a condition.
@@ -43,9 +44,9 @@ The `<condition>` can be built using _comparison_ and _logical_ operators.
 
 ## Comparison Operators
 
-Even if you're new to SQL, comparison operators will probably look familiar to 
-those who've taken a maths class, or completed the Basic Programming module 
-at Makers:
+Even if you're new to SQL, comparison operators will probably look familiar to
+those who've taken a maths class, or completed the Basic Programming module at
+Makers:
 
 |  | Description | Example | Returns |
 | -- | ----------- | ------- | ------- |
@@ -62,18 +63,18 @@ at Makers:
   
   ---
 
-  Well spotted! There's no functional difference between the `!=` and `<>` 
-  comparators, nor is there any performance difference in SQL - they will 
-  return the same results.
+  Well spotted! There's no functional difference between the `!=` and `<>`
+  comparators, nor is there any performance difference in SQL - they will return
+  the same results.
 
-  Your choice will largely come down to personal preference. `!=` may look more 
-  familiar if you've been doing programming, whereas `<>` may be a more popular 
+  Your choice will largely come down to personal preference. `!=` may look more
+  familiar if you've been doing programming, whereas `<>` may be a more popular
   choice for maths-heads.
 
-  As with most things, there are always edge-cases: there are some old or 
-  fringe database systems which may only recognise one of the two (for instance, 
-  Microsoft Access 2010 exclusively uses `<>`). But don't concern yourself with 
-  these for now - just know that you can use them interchangeably, should the 
+  As with most things, there are always edge-cases: there are some old or fringe
+  database systems which may only recognise one of the two (for instance,
+  Microsoft Access 2010 exclusively uses `<>`). But don't concern yourself with
+  these for now - just know that you can use them interchangeably, should the
   need occur.
 
   ---
@@ -106,21 +107,21 @@ Run this command and you should get the following result set:
   2238 | 1978 |         5 | Exile       | Exile       | Kiss You All Over    | 2239
 ```
 
-Try replacing `1978` with the year of your birth, to see what was big in the 
+Try replacing `1978` with the year of your birth, to see what was big in the
 United States at that time.
 
 ## Logical Operators
 
-We saw how **comparison operators** allow you to select data based on one given 
-criteria. That's useful, but we'll often want to use more complex, multi-faceted 
-selection criteria. **Logical operators** allow you to combine comparisons, so 
+We saw how **comparison operators** allow you to select data based on one given
+criteria. That's useful, but we'll often want to use more complex, multi-faceted
+selection criteria. **Logical operators** allow you to combine comparisons, so
 that your results match multiple comparison operators.
 
 ### AND
 
-The `AND` keyword allows you to specify two (or more) comparisons in your query, 
-and return only the results which match both criteria. For example, if you 
-want to get the first five number 1s of the 2000s:
+The `AND` keyword allows you to specify two (or more) comparisons in your query,
+and return only the results which match both criteria. For example, if you want
+to get the first five number 1s of the 2000s:
 
 ```
 SELECT * 
@@ -142,23 +143,25 @@ Run this query, and you'll see the following results:
   5081 | 2004 |         1 | Usher feat. Lil Jon and Ludacris | Usher      | Yeah!               | 5082
 ```
 
-Take a moment to consider what the `AND` has achieved here. Think about the 
-answers to the following questions, and then run the query to test whether your 
+Take a moment to consider what the `AND` has achieved here. Think about the
+answers to the following questions, and then run the query to test whether your
 assumption was correct:
 
-* What would the results look like if the `WHERE` clause was just `WHERE year >= 2000`?
-* What would the results look like if the `WHERE` clause was just `WHERE year_rank = 1`?
+* What would the results look like if the `WHERE` clause was just `WHERE year >=
+  2000`?
+* What would the results look like if the `WHERE` clause was just `WHERE
+  year_rank = 1`?
 
-If your imagination is already running wild with what you can achieve 
-using `AND`, hold onto that thought - we'll do some exercises shortly!
+If your imagination is already running wild with what you can achieve using
+`AND`, hold onto that thought - we'll do some exercises shortly!
 
 ### OR
 
-Just as with `AND`, `OR` will be very familiar to mathematicians. An `OR` 
-allows you to specify two or more comparisons, and return the results which 
-match _any_ of the comparisons.
+Just as with `AND`, `OR` will be very familiar to mathematicians. An `OR` allows
+you to specify two or more comparisons, and return the results which match _any_
+of the comparisons.
 
-For example, suppose we wanted to find all of the Billboard hits of Oasis or 
+For example, suppose we wanted to find all of the Billboard hits of Oasis or
 Pink Floyd:
 
 ```
@@ -178,16 +181,16 @@ Run this query, and you'll see the following results:
   4173 | 1996 |        56 | Oasis      | Oasis      | Wonderwall                | 4174
 ```
 
-You can see that it's shown us all of the records where the artist value is 
+You can see that it's shown us all of the records where the artist value is
 **either** Pink Floyd **or** Oasis (hence the use of the `OR` operator).
 
 ### IN 
 
-We've just seen how the `OR` keyword can help us to return records which match 
-one of a particular set of values. We could have chained many more `OR` clauses 
-together to look at a wider range of artists, but when you're only concerned 
-with values for a single field, the `IN` keyword allows you to express this in 
-a much easier-to-read fashion.
+We've just seen how the `OR` keyword can help us to return records which match
+one of a particular set of values. We could have chained many more `OR` clauses
+together to look at a wider range of artists, but when you're only concerned
+with values for a single field, the `IN` keyword allows you to express this in a
+much easier-to-read fashion.
 
 ```
 SELECT * 
@@ -195,7 +198,7 @@ FROM billboard_top_100_year_end
 WHERE artist IN ('Oasis', 'Pink Floyd', 'One Direction', 'Take That')
 ```
 
-This query will return records where the artist matches any of the values 
+This query will return records where the artist matches any of the values
 specified within the specified list:
 
 ```
@@ -214,12 +217,12 @@ specified within the specified list:
 
 ### LIKE
 
-`LIKE` allows you to perform what's sometimes referred to as "fuzzy 
-matching": if you only know (or only care about) a particular part of a record 
-value, you can use the `LIKE` keyword together with a `%` wildcard symbol to 
-find any record which contains that partial string.
+`LIKE` allows you to perform what's sometimes referred to as "fuzzy matching":
+if you only know (or only care about) a particular part of a record value, you
+can use the `LIKE` keyword together with a `%` wildcard symbol to find any
+record which contains that partial string.
 
-For example, note what happens if you run the following comparison query, to 
+For example, note what happens if you run the following comparison query, to
 retrieve just the Billboard hits of Justin Bieber:
 
 ```
@@ -228,8 +231,8 @@ FROM billboard_top_100_year_end
 WHERE group_name = 'Justin Bieber'
 ```
 
-You'll see just two results; surely that can't be correct? Notice what happens 
-when we modify this query to use the `LIKE` operator, to find any record where 
+You'll see just two results; surely that can't be correct? Notice what happens
+when we modify this query to use the `LIKE` operator, to find any record where
 the group name **starts with** Justin Bieber:
 
 ```
@@ -253,8 +256,8 @@ Now you should see a lot more results:
   6399 | 2013 |        42 | Justin Bieber feat. Nicki Minaj | Nicki Minaj   | Beauty And A Beat      | 6400
 ```
 
-You might have noticed that some of the song names are featured twice. Can you 
-deduce why there are multiple records for some of these songs in the data set? 
+You might have noticed that some of the song names are featured twice. Can you
+deduce why there are multiple records for some of these songs in the data set?
 (Clue: look at which values are different within those rows.)
 
 <details>
@@ -269,27 +272,27 @@ deduce why there are multiple records for some of these songs in the data set?
   "Baby", there is an entry (index 5970) with artist = Justin Bieber, and an 
   entry (index 5971) with artist = Ludacris.
 
-  This is a particular design decision which was taken when the creators chose 
-  their data structure, and while you shouldn't overly concern yourself with it, 
-  hopefully this is helpful to explain why you might think that there are 
+  This is a particular design decision which was taken when the creators chose
+  their data structure, and while you shouldn't overly concern yourself with it,
+  hopefully this is helpful to explain why you might think that there are
   "duplicates" in this data set.
 
   ---
 
 </details>
 
-You can also utilise multiple `%` wildcards within your `LIKE` operation; so if 
-you modify the query to say `group_name LIKE '%Justin Bieber%'` then it will 
-identify records where Justin Bieber is at the beginning, middle or end of the 
+You can also utilise multiple `%` wildcards within your `LIKE` operation; so if
+you modify the query to say `group_name LIKE '%Justin Bieber%'` then it will
+identify records where Justin Bieber is at the beginning, middle or end of the
 string. 
 
 ### NOT
 
-The `NOT` keyword is most commonly used in conjunction with the `LIKE` keyword, 
-to create the powerful phrase `NOT LIKE`. Let's look at an example of where it 
+The `NOT` keyword is most commonly used in conjunction with the `LIKE` keyword,
+to create the powerful phrase `NOT LIKE`. Let's look at an example of where it
 might come in handy.
 
-Suppose you wanted to find all of the solo hits of Santana. Your first thought 
+Suppose you wanted to find all of the solo hits of Santana. Your first thought
 might be to run this query:
 
 ```
@@ -298,7 +301,7 @@ FROM billboard_top_100_year_end
 WHERE artist = 'Santana'
 ```
 
-You'll notice that there are a number of results, many of which feature guest 
+You'll notice that there are a number of results, many of which feature guest
 vocalists (using the "feat." attribution within the group name):
 
 ```
@@ -315,7 +318,7 @@ vocalists (using the "feat." attribution within the group name):
   5772 | 2008 |        98 | Santana feat. Chad Kroeger              | Santana | Into The Night      | 5773
 ```
 
-We can use the `NOT LIKE` keyword to instruct SQL to exclude any record which 
+We can use the `NOT LIKE` keyword to instruct SQL to exclude any record which
 has the "feat." text within the group name:
 
 ```
@@ -336,10 +339,9 @@ This returns just the records which don't contain "feat." in the group name:
 
 ### BETWEEN
 
-The `BETWEEN` operator is a shortcut which you might opt to use when 
-performing comparisons on a particular field. For example, consider the 
-following comparison query, which retrieves all of the number ones of the 
-1990s:
+The `BETWEEN` operator is a shortcut which you might opt to use when performing
+comparisons on a particular field. For example, consider the following
+comparison query, which retrieves all of the number ones of the 1990s:
 
 ```
 SELECT * 
@@ -349,7 +351,7 @@ AND year >= 1990
 AND year <= 1999
 ```
 
-This will return the 10 number ones of the decade, but we can express it in a 
+This will return the 10 number ones of the decade, but we can express it in a
 shorthand form by using `BETWEEN`:
 
 ```
@@ -374,13 +376,13 @@ AND year BETWEEN 1990 AND 1999
   4438 | 1999 |         1 | Cher            | Cher            | Believe                           | 4439
 ```
 
-The `BETWEEN` keyword is inclusive, i.e. it includes both the start and end 
-values within its range. Depending on your personal preference, you might find 
+The `BETWEEN` keyword is inclusive, i.e. it includes both the start and end
+values within its range. Depending on your personal preference, you might find
 this clearer than using `>=` and `<=` pairings in your queries.
 
 ## Exercise One
 
-Write a query which returns the songs of Queen, but only those which were 
+Write a query which returns the songs of Queen, but only those which were
 released in the 1980s.
 
 When your query is written correctly, you should see the following results:
@@ -402,7 +404,7 @@ When your query is written correctly, you should see the following results:
 
 ## Exercise Two
 
-Find all of the Billboard hits by an artist whose name begins with Taylor, but 
+Find all of the Billboard hits by an artist whose name begins with Taylor, but
 don't include the hits of Taylor Swift.
 
 When your query is successfully formed, you should see the following results:
@@ -431,8 +433,8 @@ When your query is successfully formed, you should see the following results:
 
 ## Challenge
 
-Find all of Rihanna's collaborations (those which included another featured 
-artist), which charted outside the top 50. Don't include any Rihanna solo 
+Find all of Rihanna's collaborations (those which included another featured
+artist), which charted outside the top 50. Don't include any Rihanna solo
 tracks.
 
 You should get the following result set:
@@ -447,7 +449,7 @@ You should get the following result set:
   6425 | 2013 |        59 | Wale feat. Tiara Thomas or Rihanna | Rihanna | Bad                  | 6426
 ```
 
-If you see additional "Rihanna only" tracks, such as Diamonds or Disturbia, you 
+If you see additional "Rihanna only" tracks, such as Diamonds or Disturbia, you
 need to further refine your query.
 
 <details>

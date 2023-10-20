@@ -7,31 +7,41 @@ _Coaching this? Read the coach guidance
 
 In this module your learning objectives are:
 
-- Learn to efficiently analyse data stored in a relational application database using SQL
+- Learn to efficiently analyse data stored in a relational application database
+  using SQL
 - Learn to sanity check and debug SQL queries
 - Learn to build analytics dashboards using Jupyter Notebooks and SQL
-- Learn to plan and design a data analysis project based on a set of requirements
+- Learn to plan and design a data analysis project based on a set of
+  requirements
 
 ## Introduction
 
-To Software Developers, SQL is a language that allows an application to interact with a relational database. Often their use of SQL is indirect - there are a lot of tools that abstract away the SQL leaving Developers to use the methods or functions of their favourite programming language.
+To Software Developers, SQL is a language that allows an application to interact
+with a relational database. Often their use of SQL is indirect - there are a lot
+of tools that abstract away the SQL leaving Developers to use the methods or
+functions of their favourite programming language.
 
-To Analysts, SQL is a language can be used to ask really interesting questions of a dataset. Analysts in government, for example, might be asked to provide some statistics about how crime rates have changed over time or from area to area. Assuming they have some related data in a relational database, they can use SQL to find the answers.
+To Analysts, SQL is a language can be used to ask really interesting questions
+of a dataset. Analysts in government, for example, might be asked to provide
+some statistics about how crime rates have changed over time or from area to
+area. Assuming they have some related data in a relational database, they can
+use SQL to find the answers.
 
 To Data Engineers, SQL is a language that can do both of these things :)
 
-In this module, you'll start by thinking as an analyst and as you progress through the initial stages you'll learn how to ask more and more interesting questions of the data you're working with.
+In this module, you'll start by thinking as an analyst and as you progress
+through the initial stages you'll learn how to ask more and more interesting
+questions of the data you're working with.
 
-At the end of the module, you'll think as a data engineer once again as you take on the challenge of using SQL to build a dashboard.
+At the end of the module, you'll think as a data engineer once again as you take
+on the challenge of using SQL to build a dashboard.
 
 ## Sequence
 
 Work through each of these phases in sequence.
 
-Some of these challenges include submissions in which you share some of your
-for feedback. These are tagged with a 📡.
-
-<!-- OMITTED -->
+Some of these challenges include submissions in which you share some of your for
+feedback. These are tagged with a 📡.
 
 ### Phase Zero: Introduction
 

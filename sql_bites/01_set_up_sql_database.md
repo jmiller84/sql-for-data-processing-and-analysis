@@ -2,11 +2,13 @@
 
 ## Introduction
 
-In this series of exercises you will load datasets into a local Postgres database and analyse them using SQL.
+In this series of exercises you will load datasets into a local Postgres
+database and analyse them using SQL.
 
 ### Installation 
 
-Follow the following steps from the Databases module to install and set up Postgres on your local machine:
+Follow the following steps from the Databases module to install and set up
+Postgres on your local machine:
 
 > **Note**: Skip the exercises in the links below.
 
@@ -15,25 +17,30 @@ Follow the following steps from the Databases module to install and set up Postg
 
 <!-- OMITTED -->
 
-Once you're done, you should have a local Postgres database running on your machine which you can connect to using `psql -h 127.0.0.1`.
+Once you're done, you should have a local Postgres database running on your
+machine which you can connect to using `psql -h 127.0.0.1`.
 
 
 ### Load data into the database
 
-All the required code and data for loading the datasets into Postgres is under [`seeds`](./seeds/).
-You can clone this module's repository to get the files.
+All the required code and data for loading the datasets into Postgres is under
+[`seeds`](./seeds/). You can clone this module's repository to get the files.
 
-Go to the root of this repository and run the provided `seed` script to create a new database and load the datasets into it:
+Go to the root of this repository and run the provided `seed` script to create a
+new database and load the datasets into it:
 
 ```
 > cd sql_for_data_analysis
 > ./sql_bites/seeds/seed
 ```
 
-The script will create a new database called `intro_to_sql_for_analytics` and load some datasets into it.
-It will produce a bunch of output that you can mostly ignore.
+The script will create a new database called `intro_to_sql_for_analytics` and
+load some datasets into it. It will produce a bunch of output that you can
+mostly ignore.
 
-If it ran successfully, you should see something similar to the following lines at the end of the output, except that in the Owner column, you will see your own username:
+If it ran successfully, you should see something similar to the following lines
+at the end of the output, except that in the Owner column, you will see your own
+username:
 
 ```
 Done. The following tables have been created in a database called 'intro_to_sql_for_analytics':
@@ -52,9 +59,12 @@ Done. The following tables have been created in a database called 'intro_to_sql_
 (7 rows)
 ```
 
-You should now have a new database called `intro_to_sql_for_analytics` and the tables listed above in your database.
-This is the database you will be working with in this series of exercises.
-[You can find a high-level description of the data each of these tables contains here.](seeds/README.md)
+You should now have a new database called `intro_to_sql_for_analytics` and the
+tables listed above in your database.
+
+This is the database you will be working with in this series of exercises. [You
+can find a high-level description of the data each of these tables contains
+here.](seeds/README.md)
 
 ____
 

@@ -1,22 +1,33 @@
 # Using Markdown
 
-In this section, you will learn how to use markdown for use in your Jupyter Notebooks for descriptive and clear text processing.
+In this section, you will learn how to use markdown for use in your Jupyter
+Notebooks for descriptive and clear text processing.
 
 ## What is Markdown? 
 
-Markdown is a simple way of displaying text and basic formatting by the use of symbols. You will have already experienced Markdown to a great extent throughout the course, as all of the instructions throughout the curriculum are written using Markdown (Including this very sentence!).
+Markdown is a simple way of displaying text and basic formatting by the use of
+symbols. You will have already experienced Markdown to a great extent throughout
+the course, as all of the instructions throughout the curriculum are written
+using Markdown (Including this very sentence!).
 
-Jupyter Notebooks allow us to create cells that can interpret Markdown, as well as the cells that can execute python and SQL. 
+Jupyter Notebooks allow us to create cells that can interpret Markdown, as well
+as the cells that can execute python and SQL. 
 
-The benefit of this is that our Notebooks can be set out in such a way that we are able to add descriptive text above or below the output of the programmatic cells, in order to add context to whatever we may be displaying from the python or SQL cells.
+The benefit of this is that our Notebooks can be set out in such a way that we
+are able to add descriptive text above or below the output of the programmatic
+cells, in order to add context to whatever we may be displaying from the python
+or SQL cells.
 
-We can add Headers, Lists, Tables - all number of different and helpful pieces of word processing.
+We can add Headers, Lists, Tables - all number of different and helpful pieces
+of word processing.
 
-This turns our Notebooks from a collection of results into a document that is fit for business consumption.
+This turns our Notebooks from a collection of results into a document that is
+fit for business consumption.
 
 ## Cheat Sheet
 
-Feel free to click on any of the element names to learn more, they link to the relevant entry on markdownguide.org.
+Feel free to click on any of the element names to learn more, they link to the
+relevant entry on markdownguide.org.
 
 * **Basic Syntax**  
   <table class="table table-bordered">
@@ -164,8 +175,6 @@ Feel free to click on any of the element names to learn more, they link to the r
     </tr>
   </tbody>
 </table>
-
-
 
 
 <!-- BEGIN GENERATED SECTION DO NOT EDIT -->
