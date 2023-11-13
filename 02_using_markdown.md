@@ -29,7 +29,7 @@ fit for business consumption.
 Feel free to click on any of the element names to learn more, they link to the
 relevant entry on markdownguide.org.
 
-* **Basic Syntax**  
+- **Basic Syntax**  
   <table class="table table-bordered">
   <thead class="thead-light">
     <tr>
@@ -88,8 +88,13 @@ relevant entry on markdownguide.org.
     </tr>
   </tbody>
 </table>
+<br>
 
-* **Extended Syntax**  
+---
+
+<br>
+
+**Extended Syntax**  
 
   <table class="table table-bordered">
   <thead class="thead-light">
