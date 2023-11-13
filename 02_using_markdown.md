@@ -116,7 +116,7 @@ relevant entry on markdownguide.org.
       &nbsp;&nbsp;"lastName": "Smith",<br>
       &nbsp;&nbsp;"age": 25<br>
       }<br>
-      
+      ```
       </code></td>
     </tr>
     <tr>
