@@ -89,7 +89,7 @@ relevant entry on markdownguide.org.
   </tbody>
 </table>
 
-  * **Extended Syntax**  
+* **Extended Syntax**  
 
   <table class="table table-bordered">
   <thead class="thead-light">
